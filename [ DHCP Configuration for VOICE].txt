@@ -1,0 +1,14 @@
+[ DHCP Configuration for VOICE]
+
+ip dhcp excluded-address 172.16.100.1  
+ip dhcp pool FINVOICE 
+network 172.16.100.0 255.255.255.224
+default-router 172.16.100.1
+option 150 ip 172.16.100.1
+
+
+
+for voice vlan=100:
+int fa0/0.100
+encapsulation dot1Q 10
+ip address 172.16.100.1 255.255.255.224

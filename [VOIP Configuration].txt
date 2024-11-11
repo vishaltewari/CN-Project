@@ -1,0 +1,18 @@
+[VOIP Configuration]
+service te
+telephony-service
+max-dn-20
+ip source address 172.16.100.1 port 2000
+auto assign 1 to 20
+exit
+
+To assign numbers to each ip phone:
+ephone-dn 1
+number 101
+ephone-dn 2
+number 102
+.
+.
+.
+ephone-dn 10
+number 110

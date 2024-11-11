@@ -1,0 +1,24 @@
+[SSH Configuration]
+en
+conf t
+hostname Sales-Router
+enable password cisco
+line console 0
+password cisco
+login 
+exit
+banner motd #No Unauthorised access#
+service password-encryption
+no ip domain lookup
+
+
+do wr
+
+username cisco password cisco
+ip domain name cisco.net
+crypto key generate rsa general-keys modulus 1024   //RSA Key pair
+line vty 0 15
+login local
+transport input ssh
+exit 
+do wr
